@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sss;
+package Security_System;
 
 /**
  *
  * @author Ehab Khaled
  */
-public class Cusomer extends javax.swing.JFrame {
+public class Customer_GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Cusomer
      */
-    public Cusomer() {
+    public Customer_GUI() {
         initComponents();
     }
 
@@ -30,11 +30,11 @@ public class Cusomer extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        finish = new javax.swing.JButton();
+        Finish_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        getnum = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        back = new javax.swing.JButton();
+        Entarnce_Num = new javax.swing.JTextField();
+        Get_Entrance_No = new javax.swing.JButton();
+        Back_button = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -49,53 +49,52 @@ public class Cusomer extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(60, 10, 340, 41);
 
-        finish.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
-        finish.setText("Finish");
-        finish.setEnabled(false);
-        finish.addActionListener(new java.awt.event.ActionListener() {
+        Finish_button.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
+        Finish_button.setText("Finish");
+        Finish_button.setEnabled(false);
+        Finish_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                finishActionPerformed(evt);
+                Finish_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(finish);
-        finish.setBounds(331, 160, 100, 33);
+        jPanel1.add(Finish_button);
+        Finish_button.setBounds(331, 160, 100, 33);
 
         jLabel2.setFont(new java.awt.Font("MS Mincho", 1, 18)); // NOI18N
         jLabel2.setText("Your number is : ");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(40, 120, 170, 19);
 
-        getnum.setEditable(false);
-        getnum.setEnabled(false);
-        getnum.addActionListener(new java.awt.event.ActionListener() {
+        Entarnce_Num.setEditable(false);
+        Entarnce_Num.setEnabled(false);
+        Entarnce_Num.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                getnumActionPerformed(evt);
+                Entarnce_NumActionPerformed(evt);
             }
         });
-        jPanel1.add(getnum);
-        getnum.setBounds(220, 120, 97, 20);
+        jPanel1.add(Entarnce_Num);
+        Entarnce_Num.setBounds(220, 120, 97, 20);
 
-        jButton2.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
-        jButton2.setText("Get entrance number");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Get_Entrance_No.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
+        Get_Entrance_No.setText("Get entrance number");
+        Get_Entrance_No.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Get_Entrance_NoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(22, 63, 191, 33);
+        jPanel1.add(Get_Entrance_No);
+        Get_Entrance_No.setBounds(22, 63, 191, 33);
 
-        back.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
-        back.setText("Back");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        Back_button.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
+        Back_button.setText("Back");
+        Back_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                Back_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(back);
-        back.setBounds(30, 160, 90, 33);
+        jPanel1.add(Back_button);
+        Back_button.setBounds(30, 160, 90, 33);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hatem Moahmed\\Desktop\\elegant-vertical-frame-on-a-white-background-vector-3839746.jpg")); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(0, 0, 450, 210);
@@ -114,30 +113,30 @@ public class Cusomer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void getnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getnumActionPerformed
+    private void Entarnce_NumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Entarnce_NumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_getnumActionPerformed
+    }//GEN-LAST:event_Entarnce_NumActionPerformed
 
-    private void finishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishActionPerformed
-        getnum.setText("");
-        getnum.setEnabled(false);
-        finish.setEnabled(false);
+    private void Finish_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Finish_buttonActionPerformed
+        Entarnce_Num.setText("");
+        Entarnce_Num.setEnabled(false);
+        Finish_button.setEnabled(false);
         //System.exit(1);
         // TODO add your handling code here:
-    }//GEN-LAST:event_finishActionPerformed
+    }//GEN-LAST:event_Finish_buttonActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_buttonActionPerformed
 this.setVisible(false);
-        new Welcome().setVisible(true);
+        new Welcome_GUI().setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_Back_buttonActionPerformed
     int counter =0;
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        getnum.setEnabled(true);
-        getnum.setText(""+(200+counter));
+    private void Get_Entrance_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Get_Entrance_NoActionPerformed
+        Entarnce_Num.setEnabled(true);
+        Entarnce_Num.setText(""+(200+counter));
         counter++;
-        finish.setEnabled(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Finish_button.setEnabled(true);
+    }//GEN-LAST:event_Get_Entrance_NoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,29 +155,32 @@ this.setVisible(false);
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cusomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cusomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cusomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cusomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cusomer().setVisible(true);
+                new Customer_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back;
-    private javax.swing.JButton finish;
-    private javax.swing.JTextField getnum;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Back_button;
+    private javax.swing.JTextField Entarnce_Num;
+    private javax.swing.JButton Finish_button;
+    private javax.swing.JButton Get_Entrance_No;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

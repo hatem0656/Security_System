@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sss;
+package Security_System;
 import java.sql.DriverManager;
 import java.sql.Connection ; 
 import java.sql.SQLException ; 
@@ -18,30 +18,15 @@ import javax.swing.JOptionPane;
  *
  * @author Ehab Khaled
  */
-public class Empolyee extends javax.swing.JFrame {
+public class Empolyee_GUI extends javax.swing.JFrame {
 public int ID_num ; 
- public static int [] ID_col = new int [10];
+
     /**
      * Creates new form Empolyee
      */
-    public Empolyee() {
+    public Empolyee_GUI() {
         initComponents();
-                 int i =0 ;
-                      try{
-    
-    Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Security System", "Hatem", "133147");
-    Statement stmt =  con.createStatement() ; 
-    String SQL = "SELECT * FROM employees" ; 
-    ResultSet rs = stmt.executeQuery(SQL);
-     
-    while(rs.next()){
-  ID_col[i] = rs.getInt("ID");
-    i++ ;
-    }
-    }
-        catch (SQLException err){
-            System.out.println(err.getMessage());
-        }
+       
     }
 
     /**
@@ -56,9 +41,9 @@ public int ID_num ;
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        login = new javax.swing.JButton();
-        id = new javax.swing.JPasswordField();
-        back = new javax.swing.JButton();
+        Confirm_button = new javax.swing.JButton();
+        ID_textbox = new javax.swing.JPasswordField();
+        Back_button = new javax.swing.JButton();
         check = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -79,37 +64,35 @@ public int ID_num ;
         jPanel1.add(jLabel2);
         jLabel2.setBounds(80, 20, 260, 40);
 
-        login.setFont(new java.awt.Font("Segoe Script", 3, 11)); // NOI18N
-        login.setText("Confirm");
-        login.addActionListener(new java.awt.event.ActionListener() {
+        Confirm_button.setFont(new java.awt.Font("Segoe Script", 3, 11)); // NOI18N
+        Confirm_button.setText("Confirm");
+        Confirm_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                Confirm_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(login);
-        login.setBounds(260, 190, 90, 30);
+        jPanel1.add(Confirm_button);
+        Confirm_button.setBounds(260, 190, 90, 30);
 
-        id.addActionListener(new java.awt.event.ActionListener() {
+        ID_textbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
+                ID_textboxActionPerformed(evt);
             }
         });
-        jPanel1.add(id);
-        id.setBounds(160, 130, 110, 30);
+        jPanel1.add(ID_textbox);
+        ID_textbox.setBounds(160, 130, 110, 30);
 
-        back.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
-        back.setText("Back");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        Back_button.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
+        Back_button.setText("Back");
+        Back_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                Back_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(back);
-        back.setBounds(80, 190, 80, 30);
+        jPanel1.add(Back_button);
+        Back_button.setBounds(80, 190, 80, 30);
         jPanel1.add(check);
         check.setBounds(80, 170, 0, 0);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hatem Moahmed\\Desktop\\microsoft-sign-at-the-entrance-of-their-silicon-valley-campus-471179856-5c3d5d9a46e0fb00016dd455.jpg")); // NOI18N
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 410, 380);
 
@@ -127,75 +110,27 @@ public int ID_num ;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+    private void ID_textboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_textboxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
+    }//GEN-LAST:event_ID_textboxActionPerformed
 int counter=0,flag =0,ID=123;
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-       ID_num =Integer.parseInt(id.getText());
-       int x , chk =0 ;
-       
-        for(x=0 ; x<10 ; x++){
-           
-            if (ID_num == ID_col[x]){
-                  
-                JOptionPane.showMessageDialog(null, "ID Found ,Welcome Sir", "Entrance Successful" ,1);
-                chk ++ ;
-                break ;
-            }  
-        }
-   if (chk==0){
-      if(flag<2)
-      {
-          JOptionPane.showMessageDialog(this, "ID is not valid", "Warning", JOptionPane.ERROR_MESSAGE);
-      }
-       
-      /* try {
-           TimeUnit.SECONDS.sleep(1);
-       } catch (InterruptedException ex) {
-           Logger.getLogger(Empolyee.class.getName()).log(Level.SEVERE, null, ex);
-       }*/
-       flag++;
-       id.setText("");
-   }
-  
-       
-   if(flag==3 &&counter<2)
-    {
-        counter++;
-        
-       
-        
-        try {
-           TimeUnit.SECONDS.sleep(1);
-       } catch (InterruptedException ex) {
-           Logger.getLogger(Empolyee.class.getName()).log(Level.SEVERE, null, ex);
+    private void Confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_buttonActionPerformed
+       ID_num =Integer.parseInt(ID_textbox.getText());
+       Empolyee E1 = new Empolyee () ;
+       E1.Set_ID(ID_num);
+       if ("ID Found".equals(E1.Check_ID())){
+             JOptionPane.showMessageDialog(null, "ID Found ,Welcome Sir", "Entrance Successful" ,1);
        }
-         
-        flag=0;
-    }
-   if(flag==0 && counter<2&& chk ==0)
-   {
-       JOptionPane.showMessageDialog(this, "you enterd a wrong ID pleas check your ID and login", "warning", JOptionPane.WARNING_MESSAGE);
-        /*login.setEnabled(false);
-        id.setEnabled(false);
-        password.setEnabled(false);
-        check.setText("");*/
-   }
-   
-   if(counter==2)
-   {
-       counter=0;
-       
-       JOptionPane.showMessageDialog(this, "alarm", "alarm set", JOptionPane.ERROR_MESSAGE);
-   }  
-    }//GEN-LAST:event_loginActionPerformed
+       else {
+            JOptionPane.showMessageDialog(this, "ID not Found", "Warning", JOptionPane.ERROR_MESSAGE);
+       }
+    }//GEN-LAST:event_Confirm_buttonActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
- this.setVisible(false);
-        new Welcome().setVisible(true);
+    private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_buttonActionPerformed
+        this.setVisible(false);
+        new Welcome_GUI().setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_Back_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,32 +150,33 @@ int counter=0,flag =0,ID=123;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Empolyee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empolyee_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Empolyee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empolyee_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Empolyee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empolyee_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Empolyee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Empolyee_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Empolyee().setVisible(true);
+                new Empolyee_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back;
+    private javax.swing.JButton Back_button;
+    private javax.swing.JButton Confirm_button;
+    private javax.swing.JPasswordField ID_textbox;
     private javax.swing.JLabel check;
-    private javax.swing.JPasswordField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }

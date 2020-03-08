@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sss;
+package Security_System;
 
 import java.sql.DriverManager;
 import java.sql.Connection ; 
@@ -14,12 +14,12 @@ import java.sql.ResultSet ;
  *
  * @author Ehab Khaled
  */
-public class Welcome extends javax.swing.JFrame {
+public class Welcome_GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Welcome
      */
-    public Welcome() {
+    public Welcome_GUI() {
         initComponents();
     }
 
@@ -36,10 +36,10 @@ public class Welcome extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        empolyee = new javax.swing.JRadioButton();
-        customer = new javax.swing.JRadioButton();
-        confirm = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Empolyee_Button = new javax.swing.JRadioButton();
+        Customer_button = new javax.swing.JRadioButton();
+        Confirm_button = new javax.swing.JButton();
+        Cancel_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,50 +59,48 @@ public class Welcome extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(10, 68, 110, 30);
 
-        empolyee.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
-        empolyee.setForeground(new java.awt.Color(255, 255, 255));
-        empolyee.setText("Employee");
-        empolyee.addActionListener(new java.awt.event.ActionListener() {
+        Empolyee_Button.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        Empolyee_Button.setForeground(new java.awt.Color(255, 255, 255));
+        Empolyee_Button.setText("Employee");
+        Empolyee_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empolyeeActionPerformed(evt);
+                Empolyee_ButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(empolyee);
-        empolyee.setBounds(153, 69, 87, 27);
+        jPanel2.add(Empolyee_Button);
+        Empolyee_Button.setBounds(153, 69, 87, 27);
 
-        customer.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
-        customer.setForeground(new java.awt.Color(255, 255, 255));
-        customer.setText("Customer");
-        customer.addActionListener(new java.awt.event.ActionListener() {
+        Customer_button.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        Customer_button.setForeground(new java.awt.Color(255, 255, 255));
+        Customer_button.setText("Customer");
+        Customer_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerActionPerformed(evt);
+                Customer_buttonActionPerformed(evt);
             }
         });
-        jPanel2.add(customer);
-        customer.setBounds(153, 114, 87, 27);
+        jPanel2.add(Customer_button);
+        Customer_button.setBounds(153, 114, 87, 27);
 
-        confirm.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
-        confirm.setText("Confirm");
-        confirm.setEnabled(false);
-        confirm.addActionListener(new java.awt.event.ActionListener() {
+        Confirm_button.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
+        Confirm_button.setText("Confirm");
+        Confirm_button.setEnabled(false);
+        Confirm_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmActionPerformed(evt);
+                Confirm_buttonActionPerformed(evt);
             }
         });
-        jPanel2.add(confirm);
-        confirm.setBounds(300, 150, 87, 29);
+        jPanel2.add(Confirm_button);
+        Confirm_button.setBounds(300, 150, 87, 29);
 
-        jButton1.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Cancel_button.setFont(new java.awt.Font("Segoe Script", 1, 12)); // NOI18N
+        Cancel_button.setText("Cancel");
+        Cancel_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Cancel_buttonActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(50, 150, 90, 30);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Hatem Moahmed\\Desktop\\4557efb3eba0e8b.jpg")); // NOI18N
+        jPanel2.add(Cancel_button);
+        Cancel_button.setBounds(50, 150, 90, 30);
         jPanel2.add(jLabel2);
         jLabel2.setBounds(0, 0, 450, 200);
 
@@ -120,38 +118,38 @@ public class Welcome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerActionPerformed
-        confirm.setEnabled(true);
-        empolyee.setSelected(false);
+    private void Customer_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_buttonActionPerformed
+        Confirm_button.setEnabled(true);
+        Empolyee_Button.setSelected(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_customerActionPerformed
+    }//GEN-LAST:event_Customer_buttonActionPerformed
 
-    private void empolyeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empolyeeActionPerformed
+    private void Empolyee_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Empolyee_ButtonActionPerformed
         
-        confirm.setEnabled(true);
-        customer.setSelected(false);
+        Confirm_button.setEnabled(true);
+        Customer_button.setSelected(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_empolyeeActionPerformed
+    }//GEN-LAST:event_Empolyee_ButtonActionPerformed
 
-    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-  if(empolyee.isSelected())
-       {     Empolyee f1 = new Empolyee();
-             Welcome f2 = new Welcome();
+    private void Confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_buttonActionPerformed
+  if(Empolyee_Button.isSelected())
+       {     Empolyee_GUI f1 = new Empolyee_GUI();
+             Welcome_GUI f2 = new Welcome_GUI();
             
              f2.setVisible(false);
              f1.setVisible(true);
              
        }
-       else if(customer.isSelected())
+       else if(Customer_button.isSelected())
        {
              this.setVisible(false);
-             new Cusomer().setVisible(true);
+             new Customer_GUI().setVisible(true);
        }              // TODO add your handling code here:
-    }//GEN-LAST:event_confirmActionPerformed
+    }//GEN-LAST:event_Confirm_buttonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Cancel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_buttonActionPerformed
         System.exit(1);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Cancel_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,29 +176,30 @@ public class Welcome extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Welcome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Welcome_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Welcome().setVisible(true);
+                new Welcome_GUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton confirm;
-    private javax.swing.JRadioButton customer;
-    private javax.swing.JRadioButton empolyee;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Cancel_button;
+    private javax.swing.JButton Confirm_button;
+    private javax.swing.JRadioButton Customer_button;
+    private javax.swing.JRadioButton Empolyee_Button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
