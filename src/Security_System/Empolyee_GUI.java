@@ -4,14 +4,6 @@
  * and open the template in the editor.
  */
 package Security_System;
-import java.sql.DriverManager;
-import java.sql.Connection ; 
-import java.sql.SQLException ; 
-import java.sql.Statement ;
-import java.sql.ResultSet ;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,22 +105,29 @@ public int ID_num ;
     private void ID_textboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_textboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ID_textboxActionPerformed
-int counter=0,flag =0,ID=123;
+
     private void Confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_buttonActionPerformed
+       char c ;
        ID_num =Integer.parseInt(ID_textbox.getText());
        Empolyee E1 = new Empolyee () ;
-       E1.Set_ID(ID_num);
+       c = E1.Set_ID(ID_num);
+       
+       if ( c == 'k'){
        if ("ID Found".equals(E1.Check_ID())){
              JOptionPane.showMessageDialog(null, "ID Found ,Welcome Sir", "Entrance Successful" ,1);
        }
        else {
             JOptionPane.showMessageDialog(this, "ID not Found", "Warning", JOptionPane.ERROR_MESSAGE);
        }
+       }
+       else {
+           JOptionPane.showMessageDialog(this, "Too large ID", "Warning", JOptionPane.ERROR_MESSAGE);
+       }
     }//GEN-LAST:event_Confirm_buttonActionPerformed
 
     private void Back_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_buttonActionPerformed
         this.setVisible(false);
-        new Welcome_GUI().setVisible(true);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_Back_buttonActionPerformed
 

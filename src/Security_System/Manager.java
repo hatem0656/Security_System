@@ -10,38 +10,34 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-//import java.util.concurrent.TimeUnit;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import javax.swing.JOptionPane;
 
 /**
  *
  * @author Hatem Moahmed
  */
-public class Empolyee {
+public class Manager {
     private int True_ID ;
     private int ID_num ;
-    public Empolyee()  {
+    public Manager()  {
         ID_num = 0 ;
          
     }
-    public char Set_ID(int ID){
-        if ( ID < 100000){ 
+    public char MSet_ID(int ID){
+        if ( ID < 10000){ 
         ID_num = ID ; 
         return ('k'); // ID entered from 1 to 5 didgit
         }
         else {
-        return('f') ; // iD entered greater than 5 digits
+        return('f') ; // ID entered greater than 5 digits
         }
     }
-    public String Check_ID (){
+    public String MCheck_ID (){
         int flag =0  ;
     try{
     
     Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Security System", "Hatem", "133147");
     Statement stmt =  con.createStatement() ; 
-    String SQL = "SELECT * FROM employees" ; 
+    String SQL = "SELECT * FROM manager" ; 
     ResultSet rs = stmt.executeQuery(SQL);
      
     while(rs.next()){
@@ -64,6 +60,5 @@ public class Empolyee {
             return("ID Found") ;
         }
     }
+    
 }
-
-

@@ -9,11 +9,7 @@ package Security_System;
  *
  * @author Ehab Khaled
  */
-import java.sql.DriverManager;
-import java.sql.Connection ; 
-import java.sql.SQLException ; 
-import java.sql.Statement ;
-import java.sql.ResultSet ;
+
 import javax.swing.JOptionPane;
 public class Door_GUI extends javax.swing.JFrame {
 
@@ -39,10 +35,9 @@ public int Pass_Num , Door_Num  ;
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         confirm = new javax.swing.JButton();
-        cancel = new javax.swing.JButton();
         Password = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        Door_No = new javax.swing.JTextField();
+        Select_Door = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,16 +78,6 @@ public int Pass_Num , Door_Num  ;
         jPanel2.add(confirm);
         confirm.setBounds(245, 172, 111, 39);
 
-        cancel.setFont(new java.awt.Font("Segoe Script", 2, 18)); // NOI18N
-        cancel.setText("Cancel");
-        cancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cancel);
-        cancel.setBounds(71, 172, 97, 37);
-
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
@@ -107,13 +92,9 @@ public int Pass_Num , Door_Num  ;
         jPanel2.add(jLabel3);
         jLabel3.setBounds(84, 97, 87, 33);
 
-        Door_No.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Door_NoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Door_No);
-        Door_No.setBounds(210, 70, 120, 20);
+        Select_Door.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", " " }));
+        jPanel2.add(Select_Door);
+        Select_Door.setBounds(210, 70, 120, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,31 +111,25 @@ public int Pass_Num , Door_Num  ;
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-           Door_Num = Integer.parseInt (Door_No.getText());
+           Door_Num = (Select_Door.getSelectedIndex()) + 1;
            Pass_Num = Integer.parseInt (Password.getText());
             Door D1 = new Door();
             D1.Set_DoorNum(Door_Num);
-            D1.Set_Pass(Pass_Num);
-            
+            char c = D1.Set_Pass(Pass_Num);
+            if (c == 'k'){
         if ("Entrance Accepted".equals(D1.Check_Pass())){
             JOptionPane.showMessageDialog(null, "Pass Accepted", "You Can Enter " ,1);
         }
         else {
             JOptionPane.showMessageDialog(null, "Wrong Pass", "Password is wrong " ,0);
         }
+            }
+            else { JOptionPane.showMessageDialog(null, "Invalid Password Length", "Password is wrong " ,0); }
     }//GEN-LAST:event_confirmActionPerformed
-
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        System.exit(1);
-    }//GEN-LAST:event_cancelActionPerformed
 
     private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordActionPerformed
-
-    private void Door_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Door_NoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Door_NoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,9 +169,8 @@ public int Pass_Num , Door_Num  ;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Door_No;
     private javax.swing.JPasswordField Password;
-    private javax.swing.JButton cancel;
+    private javax.swing.JComboBox<String> Select_Door;
     private javax.swing.JButton confirm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

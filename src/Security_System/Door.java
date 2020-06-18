@@ -17,11 +17,11 @@ import java.sql.PreparedStatement;
  */
 public class Door {
     
-    private int Pass_Num , Door_Num ,True_Pass  ;
+    protected int Pass_Num , Door_Num ,True_Pass  ;
         public Door()  {
         Door_Num = 0 ;    
         Pass_Num = 0 ;
-        int i =0 ;
+        
 
     }
       
@@ -46,10 +46,12 @@ public class Door {
         }
         }
         
-        public void Set_Pass(int Pass_Num){
-            
+        public char Set_Pass(int Pass_Num){
+            if (Pass_Num < 100000 && Pass_Num >= 10000 ){
             this.Pass_Num = Pass_Num ;
-            
+            return ('k');
+            }
+            else { return ('f') ;}
         }
         
         public String Check_Pass(){
