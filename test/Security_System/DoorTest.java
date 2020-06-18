@@ -84,7 +84,7 @@ public class DoorTest {
         Door instance = new Door();
         // 1st test case
         instance.Set_DoorNum(1);
-        instance.Set_Pass(44444);
+        instance.Set_Pass(88888);
         expResult = "Entrance Accepted";
         result = instance.Check_Pass();
         assertEquals(expResult, result);

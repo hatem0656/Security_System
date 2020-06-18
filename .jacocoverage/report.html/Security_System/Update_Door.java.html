@@ -16,25 +16,48 @@ import java.sql.Statement;
  *
  * @author Hatem Moahmed
  */
-<span class="nc" id="L19">public class Update_Door extends Door {</span>
-            @Override
+<span class="fc" id="L19">public class Update_Door extends Door {</span>
+  private int New_Pass , Confirm_Pass ;        
+    
+    
+    public char Set_NewPass ( int New_Pass){
+<span class="pc bpc" id="L24" title="2 of 4 branches missed.">      if (New_Pass &lt; 100000 &amp;&amp; New_Pass &gt;= 10000 ){</span>
+<span class="fc" id="L25">            this.New_Pass = New_Pass;</span>
+<span class="fc" id="L26">            return ('k');</span>
+            }
+<span class="nc" id="L28">            else { return ('f') ;}</span>
+    }
+     public char Set_ConfirmPass ( int Confirm_Pass){
+<span class="pc bpc" id="L31" title="2 of 4 branches missed.">      if (Confirm_Pass &lt; 100000 &amp;&amp; Confirm_Pass &gt;= 10000 ){</span>
+<span class="fc" id="L32">            this.Confirm_Pass = Confirm_Pass;</span>
+<span class="fc" id="L33">            return ('k');</span>
+            }
+<span class="nc" id="L35">            else { return ('f') ;}</span>
+    }
+     
+     public boolean Matched(){
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (New_Pass == Confirm_Pass) {  Pass_Num = New_Pass ;</span>
+<span class="fc" id="L40">        return true ;} </span>
+<span class="fc" id="L41">        else return false ;</span>
+     }
+    @Override
             public void Set_DoorNum(int Door_Num){
-<span class="nc" id="L22">            this.Door_Num = Door_Num ;</span>
+<span class="fc" id="L45">            this.Door_Num = Door_Num ;</span>
       try{
     
-<span class="nc" id="L25">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
-<span class="nc" id="L26">    Statement stmt =  con.createStatement() ;  </span>
+<span class="fc" id="L48">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
+<span class="fc" id="L49">    Statement stmt =  con.createStatement() ;  </span>
    
-<span class="nc" id="L28">    String SQL = &quot;UPDATE door SET PASSWORD = ? WHERE NUMBER = ?&quot; ;</span>
-<span class="nc" id="L29">   PreparedStatement ps = con.prepareStatement(SQL);</span>
-<span class="nc" id="L30">    ps.setInt(1, Pass_Num);</span>
-<span class="nc" id="L31">    ps.setInt(2, Door_Num);</span>
-<span class="nc" id="L32">    ps.executeUpdate();</span>
+<span class="fc" id="L51">    String SQL = &quot;UPDATE door SET PASSWORD = ? WHERE NUMBER = ?&quot; ;</span>
+<span class="fc" id="L52">   PreparedStatement ps = con.prepareStatement(SQL);</span>
+<span class="fc" id="L53">    ps.setInt(1, Pass_Num);</span>
+<span class="fc" id="L54">    ps.setInt(2, Door_Num);</span>
+<span class="fc" id="L55">    ps.executeUpdate();</span>
     
                                   }
-<span class="nc" id="L35">  catch (SQLException err){</span>
-<span class="nc" id="L36">            System.out.println(err.getMessage());</span>
-<span class="nc" id="L37">        }</span>
-<span class="nc" id="L38">        }</span>
+<span class="nc" id="L58">  catch (SQLException err){</span>
+<span class="nc" id="L59">            System.out.println(err.getMessage());</span>
+<span class="fc" id="L60">        }</span>
+<span class="fc" id="L61">        }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

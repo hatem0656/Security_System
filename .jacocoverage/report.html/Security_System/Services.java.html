@@ -17,7 +17,7 @@ import java.sql.Statement;
  * @author Hatem Moahmed
  */
 public class Services {
-    private int book_queue , ask_queue , customerService_queue , temp ;
+    private int book_queue , ask_queue , customerService_queue ;
 <span class="nc" id="L21">    Services() {</span>
 <span class="nc" id="L22">    book_queue = 0 ;</span>
 <span class="nc" id="L23">    ask_queue = 0 ; </span>
@@ -36,74 +36,80 @@ public class Services {
 <span class="nc" id="L36">    ResultSet rs = stmt.executeQuery(SQL);</span>
 <span class="nc bnc" id="L37" title="All 2 branches missed.">     while(rs.next()){</span>
 <span class="nc" id="L38">       book_queue = rs.getInt(&quot;BOOKING&quot;);</span>
+<span class="nc" id="L39">       ask_queue = rs.getInt(&quot;ASKING&quot;);</span>
+<span class="nc" id="L40">       customerService_queue = rs.getInt(&quot;CUSTOMER_SERVICE&quot;);</span>
      }
-<span class="nc" id="L40">     book_queue ++ ;</span>
-<span class="nc" id="L41">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
-<span class="nc" id="L42">    PreparedStatement ps = con.prepareStatement(SQL);</span>
-<span class="nc" id="L43">    ps.setInt(1, book_queue);</span>
-<span class="nc" id="L44">    ps.setInt(2, ask_queue);</span>
-<span class="nc" id="L45">    ps.setInt(3, customerService_queue);</span>
-<span class="nc" id="L46">    ps.execute();</span>
+<span class="nc" id="L42">     book_queue ++ ;</span>
+<span class="nc" id="L43">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
+<span class="nc" id="L44">    PreparedStatement ps = con.prepareStatement(SQL);</span>
+<span class="nc" id="L45">    ps.setInt(1, book_queue);</span>
+<span class="nc" id="L46">    ps.setInt(2, ask_queue);</span>
+<span class="nc" id="L47">    ps.setInt(3, customerService_queue);</span>
+<span class="nc" id="L48">    ps.execute();</span>
    
     }
     
-<span class="nc" id="L50">    catch (SQLException err){</span>
-<span class="nc" id="L51">            System.out.println(err.getMessage());</span>
-<span class="nc" id="L52">        }</span>
+<span class="nc" id="L52">    catch (SQLException err){</span>
+<span class="nc" id="L53">            System.out.println(err.getMessage());</span>
+<span class="nc" id="L54">        }</span>
      
-<span class="nc" id="L54">      return (book_queue) ;</span>
+<span class="nc" id="L56">      return (book_queue) ;</span>
     }
     public int Asking(){
             try{
     
-<span class="nc" id="L59">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
-<span class="nc" id="L60">    Statement stmt =  con.createStatement() ;</span>
-<span class="nc" id="L61">    String SQL = &quot;SELECT * FROM SERVICE&quot; ; </span>
-<span class="nc" id="L62">    ResultSet rs = stmt.executeQuery(SQL);</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">     while(rs.next()){</span>
-<span class="nc" id="L64">       ask_queue = rs.getInt(&quot;ASKING&quot;);</span>
+<span class="nc" id="L61">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
+<span class="nc" id="L62">    Statement stmt =  con.createStatement() ;</span>
+<span class="nc" id="L63">    String SQL = &quot;SELECT * FROM SERVICE&quot; ; </span>
+<span class="nc" id="L64">    ResultSet rs = stmt.executeQuery(SQL);</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">     while(rs.next()){</span>
+<span class="nc" id="L66">       book_queue = rs.getInt(&quot;BOOKING&quot;);</span>
+<span class="nc" id="L67">       ask_queue = rs.getInt(&quot;ASKING&quot;);</span>
+<span class="nc" id="L68">       customerService_queue = rs.getInt(&quot;CUSTOMER_SERVICE&quot;);</span>
      }
-<span class="nc" id="L66">     ask_queue ++ ;</span>
-<span class="nc" id="L67">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
-<span class="nc" id="L68">    PreparedStatement ps = con.prepareStatement(SQL);</span>
-<span class="nc" id="L69">    ps.setInt(1, book_queue);</span>
-<span class="nc" id="L70">    ps.setInt(2, ask_queue);</span>
-<span class="nc" id="L71">    ps.setInt(3, customerService_queue);</span>
-<span class="nc" id="L72">    ps.execute();</span>
+<span class="nc" id="L70">     ask_queue ++ ;</span>
+<span class="nc" id="L71">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
+<span class="nc" id="L72">    PreparedStatement ps = con.prepareStatement(SQL);</span>
+<span class="nc" id="L73">    ps.setInt(1, book_queue);</span>
+<span class="nc" id="L74">    ps.setInt(2, ask_queue);</span>
+<span class="nc" id="L75">    ps.setInt(3, customerService_queue);</span>
+<span class="nc" id="L76">    ps.execute();</span>
    
     }
     
-<span class="nc" id="L76">    catch (SQLException err){</span>
-<span class="nc" id="L77">            System.out.println(err.getMessage());</span>
-<span class="nc" id="L78">        }</span>
+<span class="nc" id="L80">    catch (SQLException err){</span>
+<span class="nc" id="L81">            System.out.println(err.getMessage());</span>
+<span class="nc" id="L82">        }</span>
      
-<span class="nc" id="L80">      return (ask_queue) ;</span>
+<span class="nc" id="L84">      return (ask_queue) ;</span>
     }
     public int CustomerService(){
             try{
     
-<span class="nc" id="L85">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
-<span class="nc" id="L86">    Statement stmt =  con.createStatement() ;</span>
-<span class="nc" id="L87">    String SQL = &quot;SELECT * FROM SERVICE&quot; ; </span>
-<span class="nc" id="L88">    ResultSet rs = stmt.executeQuery(SQL);</span>
-<span class="nc bnc" id="L89" title="All 2 branches missed.">     while(rs.next()){</span>
-<span class="nc" id="L90">       customerService_queue = rs.getInt(&quot;CUSTOMER_SERVICE&quot;);</span>
+<span class="nc" id="L89">    Connection con = DriverManager.getConnection(&quot;jdbc:derby://localhost:1527/Security System&quot;, &quot;Hatem&quot;, &quot;133147&quot;);</span>
+<span class="nc" id="L90">    Statement stmt =  con.createStatement() ;</span>
+<span class="nc" id="L91">    String SQL = &quot;SELECT * FROM SERVICE&quot; ; </span>
+<span class="nc" id="L92">    ResultSet rs = stmt.executeQuery(SQL);</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">     while(rs.next()){</span>
+<span class="nc" id="L94">       book_queue = rs.getInt(&quot;BOOKING&quot;);</span>
+<span class="nc" id="L95">       ask_queue = rs.getInt(&quot;ASKING&quot;);</span>
+<span class="nc" id="L96">       customerService_queue = rs.getInt(&quot;CUSTOMER_SERVICE&quot;);</span>
      }
-<span class="nc" id="L92">     customerService_queue ++ ;</span>
-<span class="nc" id="L93">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
-<span class="nc" id="L94">    PreparedStatement ps = con.prepareStatement(SQL);</span>
-<span class="nc" id="L95">    ps.setInt(1, book_queue);</span>
-<span class="nc" id="L96">    ps.setInt(2, ask_queue);</span>
-<span class="nc" id="L97">    ps.setInt(3, customerService_queue);</span>
-<span class="nc" id="L98">    ps.execute();</span>
+<span class="nc" id="L98">     customerService_queue ++ ;</span>
+<span class="nc" id="L99">    SQL = &quot;INSERT INTO SERVICE VALUES(?,?,?)&quot; ; </span>
+<span class="nc" id="L100">    PreparedStatement ps = con.prepareStatement(SQL);</span>
+<span class="nc" id="L101">    ps.setInt(1, book_queue);</span>
+<span class="nc" id="L102">    ps.setInt(2, ask_queue);</span>
+<span class="nc" id="L103">    ps.setInt(3, customerService_queue);</span>
+<span class="nc" id="L104">    ps.execute();</span>
    
     }
     
-<span class="nc" id="L102">    catch (SQLException err){</span>
-<span class="nc" id="L103">            System.out.println(err.getMessage());</span>
-<span class="nc" id="L104">        }</span>
+<span class="nc" id="L108">    catch (SQLException err){</span>
+<span class="nc" id="L109">            System.out.println(err.getMessage());</span>
+<span class="nc" id="L110">        }</span>
      
-<span class="nc" id="L106">      return(customerService_queue );</span>
+<span class="nc" id="L112">      return(customerService_queue );</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

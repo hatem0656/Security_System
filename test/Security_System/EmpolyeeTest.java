@@ -72,7 +72,7 @@ public class EmpolyeeTest {
         result = instance.Check_ID();
         assertEquals(expResult, result);
         // 2nd test case
-        instance.Set_ID(1234);
+        instance.Set_ID(1233);
         expResult = "ID Found";
         result = instance.Check_ID();
         assertEquals(expResult, result);  
